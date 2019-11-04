@@ -37,7 +37,7 @@ namespace Hypotheek
                 Console.WriteLine("Maandbedrag?");
                 maandbedrag = int.Parse(Console.ReadLine());
                 Console.WriteLine("Rente percentage?");
-                rente = double.Parse(Console.ReadLine().Replace(",", "."));
+                rente = double.Parse(Console.ReadLine().Replace(".", ","));
 
                 return true;
             }
@@ -75,7 +75,7 @@ namespace Hypotheek
                     }
                     if (aflossing <= 0)
                     {
-                        Console.WriteLine("Maandbedrag is te laag");
+                        Console.WriteLine(String.Format("Maandbedrag is te laag (rentebedrag: {0})", rentebedrag));
                         return false;
                     }
 
